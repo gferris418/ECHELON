@@ -23,7 +23,7 @@ This catalogue supplements `docs/phase-execution-register-v0.3.md` and `docs/pen
 | Task IDs | Remaining work | Tool / service | Link | Environment | Status |
 |---|---|---|---|---|---|
 | P0.01, P0.07–P0.10 | Create monorepo contracts, capability lifecycle, task engine, Intelligence Bus, service health | Custom ECHELON Kernel | Internal repository | Mac M1 development → Linux staging | Core |
-| P0.02 | Create reproducible development stack | Docker Compose / Colima | https://github.com/docker/compose ; https://github.com/abiosoft/colima | MacBook Air M1, arm64 | Candidate baseline |
+| P0.02 | Create reproducible local development stack | Docker Compose via OrbStack Docker | https://docs.docker.com/compose/ ; https://orbstack.dev/ | MacBook Air M1, arm64 | Selected baseline |
 | P0.03 | Database and migrations | PostgreSQL | https://github.com/postgres/postgres | Local Compose → Linux staging | Selected baseline |
 | P0.04 | Cache, queues, sessions | Redis | https://github.com/redis/redis | Local Compose → Linux staging | Selected baseline |
 | P0.05 | Object storage | MinIO | https://github.com/minio/minio | Local Compose → Linux staging | Selected baseline |
@@ -84,7 +84,7 @@ This catalogue supplements `docs/phase-execution-register-v0.3.md` and `docs/pen
 
 ## Installation rules
 
-1. Prefer Docker Compose for local reproducibility; use arm64-compatible images for the M1 MacBook Air.
+1. Use Docker Compose through OrbStack Docker for local reproducibility; use arm64-compatible images for the M1 MacBook Air.
 2. Run permanent multi-service capabilities in Linux staging before production.
 3. Do not store API keys in Compose files, GitHub issues, or Markdown. Use secret references.
 4. Candidate tools require an adopted decision record, license/security review, deployment plan, health check, backup/removal plan, and integration contract before installation.
