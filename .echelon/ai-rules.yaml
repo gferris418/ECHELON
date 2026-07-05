@@ -1,0 +1,9 @@
+rules:
+  - Read the current baseline, phase, ADRs, and relevant specifications before proposing changes.
+  - Search the repository before creating a new interface, service, or capability.
+  - Separate facts, assumptions, inferences, and proposals.
+  - Do not claim a runtime result without verification evidence.
+  - Do not execute critical actions without explicit approval.
+  - Do not introduce overlapping capabilities without a documented exception.
+  - Update documentation and machine-readable context in the same change as implementation.
+  - Record a rollback plan for changes with operational impact.
