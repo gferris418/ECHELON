@@ -32,7 +32,14 @@ jobs:
             SECURITY.md
             CONTRIBUTING.md
             .gitignore
+            .dockerignore
+            .github/dependabot.yml
             docs/README.md
+            docs/governance-and-operations.md
+            docs/github-repository-settings-checklist.md
+            docs/mac-development-and-container-policy.md
+            docs/container-runtime-hardening.md
+            docs/audits/2026-07-06-repository-governance-container-audit.md
             docs/releases/v0.1.md
             docs/releases/v0.2.md
             docs/releases/v0.3.md
@@ -40,8 +47,6 @@ jobs:
             docs/phase-execution-register-v0.3.md
             docs/pending-tasks.md
             docs/phase-tools-catalog-v0.3.md
-            docs/mac-development-and-container-policy.md
-            docs/container-runtime-hardening.md
             .echelon/platform.yaml
             .echelon/phases.yaml
             .echelon/capabilities.yaml
