@@ -1,0 +1,62 @@
+module:
+  id: example-capability
+  name: Example Capability
+  status: candidate
+  owner: unassigned
+  purpose: describe the unique capability provided
+  phase_gate: phase-minus-1
+source:
+  repository_or_vendor_url: https://example.invalid/
+  source_revision: immutable-commit-or-release
+  license: review-required
+  security_review_date: YYYY-MM-DD
+runtime:
+  local_directory: /Users/babuislam/Developer/ECHELON/capabilities/example-capability
+  image: registry.example.invalid/example-capability
+  image_digest: sha256:replace-before-adoption
+  cpu_architecture: linux/arm64
+  compose_file: infrastructure/compose.capabilities.yml
+  compose_profile: capabilities
+  command: replace-before-adoption
+  runs_as_non_root: true
+  health_check: replace-before-adoption
+  cpu_limit: replace-before-adoption
+  memory_limit: replace-before-adoption
+network:
+  internal_network_only: true
+  published_ports: []
+  approved_external_domains: []
+  host_networking: false
+storage:
+  persistent_volumes: []
+  bind_mounts: []
+  data_classification: unknown
+  backup_owner: unassigned
+  restore_test_date: YYYY-MM-DD
+secrets:
+  references: []
+  mounted_read_only: true
+  stored_in_image: false
+security:
+  privileged: false
+  docker_socket_mount: false
+  read_only_root_filesystem: evaluate-and-record
+  dropped_capabilities: [ALL]
+  exceptions: []
+lifecycle:
+  update_procedure: replace-before-adoption
+  rollback_image_digest: sha256:replace-before-adoption
+  disable_procedure: replace-before-adoption
+  removal_procedure: replace-before-adoption
+  review_date: YYYY-MM-DD
+integration:
+  echelon_capability_contract: replace-before-adoption
+  events_published: []
+  events_consumed: []
+  approval_boundary: replace-before-adoption
+acceptance:
+  phase_gate_confirmed: false
+  architecture_decision_record: none
+  tests_or_verification_evidence: []
+  rollback_tested: false
+  approved_by: unassigned
