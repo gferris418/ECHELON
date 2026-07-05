@@ -1,0 +1,33 @@
+phases:
+  phase-minus-1:
+    name: Constitution and engineering controls
+    status: active
+    acceptance:
+      - Bible and release snapshots are versioned
+      - ADRs and capability register exist
+      - GitHub-first governance is defined
+      - AI contributor rules are machine-readable
+  phase-0:
+    name: Kernel and operator foundation
+    status: planned
+    depends_on: [phase-minus-1]
+  phase-1:
+    name: Controlled AI execution
+    status: planned
+    depends_on: [phase-0]
+  phase-2:
+    name: Intelligence knowledge automation observability
+    status: planned
+    depends_on: [phase-1]
+  phase-3:
+    name: Builder capabilities
+    status: planned
+    depends_on: [phase-2]
+  phase-4:
+    name: Foundry and workspaces
+    status: planned
+    depends_on: [phase-3]
+  phase-5:
+    name: Mobile remote edge operations
+    status: planned
+    depends_on: [phase-4]
