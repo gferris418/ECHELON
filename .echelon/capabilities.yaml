@@ -1,17 +1,171 @@
+registry_schema_version: 1
 policy:
   one_capability_one_best_tool: true
-approved:
-  - oracle_assistant
-  - intelligence_bus
-  - context_engine
-planned:
-  - postgresql
-  - redis
-  - minio
-  - traefik
-  - authentik
-  - 9router
-research:
-  - openclaw_nerve
-  - hermes_studio
-  - cherry_studio
+  capability_adoption_requires:
+    - architecture_decision_record
+    - module_installation_record
+    - security_and_license_review
+    - phase_gate_confirmation
+    - health_check_and_rollback_plan
+  candidate_is_not_authorized_for_installation: true
+  research_is_not_authorized_for_integration: true
+
+capabilities:
+  - id: echelon_kernel
+    role: kernel_orchestration
+    phase: phase-0
+    status: core
+    source: internal
+  - id: mission_control
+    role: operator_dashboard
+    phase: phase-0
+    status: core
+    source: internal
+  - id: oracle_assistant
+    role: operator_assistant
+    phase: phase-0
+    status: core
+    source: internal
+  - id: task_engine
+    role: task_lifecycle
+    phase: phase-0
+    status: core
+    source: internal
+  - id: intelligence_bus
+    role: event_contract
+    phase: phase-0
+    status: core
+    source: internal
+  - id: context_engine
+    role: bounded_context_and_provenance
+    phase: phase-2
+    status: core
+    source: internal
+  - id: capability_manifest
+    role: capability_contract
+    phase: phase-4
+    status: core
+    source: internal
+  - id: echelon_foundry
+    role: capability_lifecycle
+    phase: phase-4
+    status: core
+    source: internal
+  - id: workspace_manager
+    role: workspace_isolation
+    phase: phase-4
+    status: core
+    source: internal
+
+  - id: postgresql
+    role: relational_data_store
+    phase: phase-0
+    status: selected_baseline
+    source: https://github.com/postgres/postgres
+  - id: redis
+    role: cache_queue_and_transient_state
+    phase: phase-0
+    status: selected_baseline
+    source: https://github.com/redis/redis
+  - id: minio
+    role: object_storage
+    phase: phase-0
+    status: selected_baseline
+    source: https://github.com/minio/minio
+  - id: traefik
+    role: ingress_and_routing
+    phase: phase-0
+    status: selected_baseline
+    source: https://github.com/traefik/traefik
+  - id: authentik
+    role: identity_and_access
+    phase: phase-1
+    status: selected_baseline
+    source: https://github.com/goauthentik/authentik
+  - id: 9router
+    role: ai_model_gateway
+    phase: phase-1
+    status: selected_baseline
+    source: https://9router.com/
+  - id: prometheus
+    role: metrics_collection
+    phase: phase-2
+    status: selected_baseline
+    source: https://github.com/prometheus/prometheus
+  - id: grafana
+    role: metrics_and_logs_visualization
+    phase: phase-2
+    status: selected_baseline
+    source: https://github.com/grafana/grafana
+  - id: loki
+    role: log_aggregation
+    phase: phase-2
+    status: selected_baseline
+    source: https://github.com/grafana/loki
+
+  - id: lobehub
+    role: operator_facing_ai_workspace
+    phase: phase-1
+    status: candidate
+    source: https://github.com/lobehub/lobehub
+  - id: hermes_agent
+    role: agent_execution_runtime
+    phase: phase-1
+    status: candidate
+    source: repository_to_be_confirmed
+  - id: ragflow
+    role: document_retrieval_and_rag
+    phase: phase-2
+    status: candidate
+    source: https://github.com/infiniflow/ragflow
+  - id: n8n
+    role: workflow_automation
+    phase: phase-2
+    status: candidate
+    source: https://github.com/n8n-io/n8n
+  - id: whisper_webui
+    role: speech_to_text
+    phase: phase-2
+    status: candidate
+    source: https://github.com/jhj0517/Whisper-WebUI
+  - id: screenpipe
+    role: opt_in_screen_context
+    phase: phase-2
+    status: candidate
+    source: https://github.com/screenpipe/screenpipe
+  - id: tooljet
+    role: low_code_internal_tools
+    phase: phase-3
+    status: candidate
+    source: https://github.com/ToolJet/ToolJet
+  - id: openhands
+    role: sandboxed_engineering_specialist
+    phase: phase-3
+    status: candidate
+    source: https://github.com/All-Hands-AI/OpenHands
+  - id: bruno
+    role: api_collection_and_testing
+    phase: phase-3
+    status: candidate
+    source: https://github.com/usebruno/bruno
+  - id: nanobrowser
+    role: browser_research_specialist
+    phase: phase-3
+    status: candidate
+    source: https://github.com/nanobrowser/nanobrowser
+
+  - id: openclaw_nerve
+    role: cockpit_reference
+    phase: phase-1
+    status: research
+    source: https://github.com/daggerhashimoto/openclaw-nerve
+  - id: hermes_studio
+    role: operator_experience_reference
+    phase: phase-1
+    status: research
+    source: repository_to_be_confirmed
+  - id: cherry_studio
+    role: desktop_ai_workspace_reference
+    phase: phase-1
+    status: research
+    source: repository_to_be_confirmed
