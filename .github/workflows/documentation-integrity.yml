@@ -35,6 +35,9 @@ jobs:
             .dockerignore
             .github/dependabot.yml
             docs/README.md
+            docs/api-reference.md
+            docs/architecture-overview.md
+            docs/developer-guide.md
             docs/governance-and-operations.md
             docs/github-repository-settings-checklist.md
             docs/mac-development-and-container-policy.md
@@ -42,6 +45,7 @@ jobs:
             docs/data-governance-and-memory-boundaries.md
             docs/local-capacity-and-performance-budget.md
             docs/research/hermes-mission-control-reference-assessment.md
+            docs/audits/2026-07-06-code-security-performance-dependency-review.md
             docs/audits/2026-07-06-repository-governance-container-audit.md
             docs/audits/2026-07-06-principal-architecture-audit.md
             docs/releases/v0.1.md
@@ -67,6 +71,8 @@ jobs:
           set -euo pipefail
           grep -q 'v0.3' README.md
           grep -q 'GitHub is authoritative' README.md
+          grep -q 'Current implementation status: no public API endpoints exist.' docs/api-reference.md
+          grep -q 'ECHELON is in **Phase -1' docs/developer-guide.md
           grep -q 'registry_schema_version: 1' .echelon/capabilities.yaml
           grep -q 'candidate_is_not_authorized_for_installation: true' .echelon/capabilities.yaml
           grep -q 'quality_gate_schema_version: 1' .echelon/quality-gates.yaml
