@@ -1,0 +1,18 @@
+host_root: /Users/babuislam/Developer/ECHELON
+container_runtime: OrbStack Docker
+cpu_architecture: linux/arm64
+container_strategy:
+  default: one_deployable_service_per_container
+  shared_image_allowed_for: related_echelon_services_with_separate_processes
+  unrelated_service_consolidation: prohibited
+compose_profiles:
+  - core
+  - platform
+  - ai
+  - observability
+  - capabilities
+persistent_paths:
+  data: /Users/babuislam/Developer/ECHELON/data
+  secrets: /Users/babuislam/Developer/ECHELON/secrets
+  backups: /Users/babuislam/Developer/ECHELON/backups
+policy_document: docs/mac-development-and-container-policy.md
