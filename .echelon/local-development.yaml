@@ -5,6 +5,16 @@ container_strategy:
   default: one_deployable_service_per_container
   shared_image_allowed_for: related_echelon_services_with_separate_processes
   unrelated_service_consolidation: prohibited
+runtime_controls:
+  privileged_containers: prohibited
+  host_networking: prohibited
+  docker_socket_mounts: prohibited
+  host_home_mounts: prohibited
+  default_port_binding: 127.0.0.1
+  immutable_image_digest_required_for_staging_and_production: true
+  non_root_required_when_supported: true
+  health_check_required: true
+  resource_limits_required: true
 compose_profiles:
   - core
   - platform
@@ -15,4 +25,7 @@ persistent_paths:
   data: /Users/babuislam/Developer/ECHELON/data
   secrets: /Users/babuislam/Developer/ECHELON/secrets
   backups: /Users/babuislam/Developer/ECHELON/backups
-policy_document: docs/mac-development-and-container-policy.md
+policy_documents:
+  - docs/mac-development-and-container-policy.md
+  - docs/container-runtime-hardening.md
+installation_record_template: .echelon/module-installation-record.template.yaml

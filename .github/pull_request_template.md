@@ -10,6 +10,7 @@ Describe the change and the operator value it provides.
 - Bible or release sections:
 - ADRs:
 - Capability registry entry:
+- Parent implementation issue:
 
 ## Evidence classification
 
@@ -24,6 +25,19 @@ Describe the change and the operator value it provides.
 - Permission impact:
 - Network exposure impact:
 - Rollback plan:
+- Disable/removal plan:
+
+## Container and supply-chain review
+
+Complete this section when a container, image, service, dependency, or external capability changes.
+
+- [ ] Image source and immutable digest recorded
+- [ ] `linux/arm64` support verified or exception approved
+- [ ] No privileged container, host networking, Docker socket, or broad host mount
+- [ ] Ports are localhost-only unless explicitly approved
+- [ ] Health check and resource limits configured
+- [ ] Volumes, backups, restore test, and data classification recorded
+- [ ] Module installation record updated
 
 ## Verification
 
@@ -38,3 +52,4 @@ Describe the change and the operator value it provides.
 - [ ] ADR added or updated if architecture changed
 - [ ] `.echelon/` files updated if current context changed
 - [ ] Capability manifest/evaluation updated if a capability changed
+- [ ] Installation record updated if a module changed

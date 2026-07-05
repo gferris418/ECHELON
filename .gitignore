@@ -1,16 +1,74 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+# Operating-system files
+.DS_Store
+.AppleDouble
+.LSOverride
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
-node_modules
+# Editor and IDE state
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Book build output
-_book
+# Node and web build artifacts
+node_modules/
+.next/
+dist/
+build/
+coverage/
+.turbo/
+.grunt/
 
-# eBook build output
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Environment files and local secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+*.keystore
+
+# ECHELON local-only paths
+data/
+secrets/
+backups/
+archives/
+local/
+
+# Local Compose and runtime overrides
+compose.local.yml
+compose.local.yaml
+compose.override.local.yml
+compose.override.local.yaml
+infrastructure/compose.local.yml
+infrastructure/compose.local.yaml
+infrastructure/compose.override.local.yml
+infrastructure/compose.override.local.yaml
+
+# Container/runtime artifacts
+*.pid
+*.log
+.tmp/
+tmp/
+
+# Book and generated documentation output
+_book/
 *.epub
 *.mobi
-*.pdf
+
+# Local database and cache files
+*.sqlite
+*.sqlite3
+*.db

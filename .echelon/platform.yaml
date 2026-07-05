@@ -13,6 +13,11 @@ architecture:
   direct_capability_coupling: prohibited
   event_driven: true
   human_approval_for_critical_actions: required
+local_development_policy:
+  context_file: .echelon/local-development.yaml
+  installation_record: .echelon/module-installation-record.template.yaml
+  mac_policy: docs/mac-development-and-container-policy.md
+  runtime_hardening: docs/container-runtime-hardening.md
 core_services:
   - identity
   - capability-manager
