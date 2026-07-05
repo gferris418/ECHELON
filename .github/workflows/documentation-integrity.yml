@@ -1,0 +1,31 @@
+name: Documentation integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify required governance files
+        run: |
+          test -f README.md
+          test -f SECURITY.md
+          test -f CONTRIBUTING.md
+          test -f docs/README.md
+          test -f docs/releases/v0.1.md
+          test -f docs/releases/v0.2.md
+          test -f docs/releases/v0.3.md
+          test -f docs/adr/README.md
+          test -f .echelon/platform.yaml
+          test -f .echelon/phases.yaml
+          test -f .echelon/capabilities.yaml
+          test -f .echelon/ai-rules.yaml
+      - name: Verify current baseline references
+        run: |
+          grep -q 'v0.3' README.md
+          grep -q 'GitHub is authoritative' README.md
+          grep -q 'one_capability_one_best_tool' .echelon/capabilities.yaml
