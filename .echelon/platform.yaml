@@ -1,0 +1,26 @@
+project:
+  name: Project ECHELON
+  current_baseline: v0.3
+  current_phase: phase-minus-1
+  status: architecture-and-documentation-control
+source_of_truth:
+  authoritative: github
+  publication_layer: gitbook
+  conflict_rule: github-wins
+architecture:
+  kernel_is_permanent: true
+  capabilities_are_replaceable: true
+  direct_capability_coupling: prohibited
+  event_driven: true
+  human_approval_for_critical_actions: required
+core_services:
+  - identity
+  - capability-manager
+  - task-engine
+  - intelligence-bus
+  - context-engine
+  - secrets-interface
+  - storage-interface
+  - audit-timeline
+  - health-observability-adapter
+  - oracle-assistant
