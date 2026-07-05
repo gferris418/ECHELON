@@ -2,7 +2,7 @@
 
 **Purpose:** authoritative, phase-gated task register. Each task is designed to become one GitHub Project item / issue.
 
-**Canonical spreadsheet:** `docs/assets/ECHELON_Phase_Execution_and_Integration_Register_v0_3.xlsx`
+**Spreadsheet export:** maintained separately as a planning artifact. This Markdown file is the repository-native authoritative register.
 
 ## Operating rules
 
