@@ -1,21 +1,29 @@
 # Security Policy
 
-## Supported Versions
+## Supported version
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+ECHELON is currently pre-release. Only the latest `main` branch and the latest documented baseline are in scope for security fixes.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## Reporting a vulnerability
 
-## Reporting a Vulnerability
+Do not open a public issue or pull request for a suspected vulnerability. Report privately to the repository owner through GitHub private security reporting when enabled, or through a private GitHub message/contact channel agreed with the project owner.
 
-Use this section to tell people how to report a vulnerability.
+Include:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- A clear description and affected repository path/component.
+- Steps to reproduce or proof of concept.
+- Expected and observed behavior.
+- Impact assessment.
+- Any suggested mitigation.
+
+Do not include production credentials, API keys, personal data, or sensitive customer material.
+
+## Handling target
+
+The project owner should acknowledge a report within 7 days, assess severity, and coordinate remediation before public disclosure.
+
+## Scope
+
+In scope: repository code, workflows, configuration templates, manifests, documentation that could cause insecure deployment, and approved ECHELON capability adapters.
+
+Out of scope: attacks requiring unauthorized access, social engineering, denial-of-service testing, or vulnerabilities in unmodified third-party services outside ECHELON control.
