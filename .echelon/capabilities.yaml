@@ -1,0 +1,17 @@
+policy:
+  one_capability_one_best_tool: true
+approved:
+  - oracle_assistant
+  - intelligence_bus
+  - context_engine
+planned:
+  - postgresql
+  - redis
+  - minio
+  - traefik
+  - authentik
+  - 9router
+research:
+  - openclaw_nerve
+  - hermes_studio
+  - cherry_studio
