@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Project ECHELON Architecture Overview</title>
+  <desc id="desc">Layered architecture overview for Project ECHELON baseline v0.3.</desc>
+  <defs>
+    <style>
+      .bg{fill:#0b1118}.panel{fill:#101b27;stroke:#26c6da;stroke-width:2}.core{fill:#10283b;stroke:#31b6ff;stroke-width:3}.infra{fill:#12342f;stroke:#32d7b1;stroke-width:2}.cap{fill:#1a311d;stroke:#6fd35f;stroke-width:2}.future{fill:#1e1b32;stroke:#ad7cff;stroke-width:2;stroke-dasharray:8 6}.gov{fill:#2a210f;stroke:#f0b94c;stroke-width:2}.box{fill:#122333;stroke:#4ea9d9;stroke-width:1.5}.label{font:700 22px Arial,sans-serif;fill:#f1f7fb}.small{font:500 15px Arial,sans-serif;fill:#d6e5ee}.mini{font:500 13px Arial,sans-serif;fill:#b8cdd8}.cyan{fill:#63d8f2}.green{fill:#84e77c}.amber{fill:#f8ca69}.purple{fill:#c19aff}.line{stroke:#65d8fa;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#f3c45d;stroke-width:2;stroke-dasharray:7 6;fill:none}.purpleline{stroke:#b98cff;stroke-width:2;stroke-dasharray:8 6;fill:none;marker-end:url(#arrowP)}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#65d8fa"/></marker>
+    <marker id="arrowP" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#b98cff"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1600" height="1000"/>
+  <text x="800" y="48" text-anchor="middle" class="label" style="font-size:34px">PROJECT ECHELON — <tspan class="cyan">Architecture Overview</tspan></text>
+  <text x="800" y="78" text-anchor="middle" class="small">Baseline v0.3 • Current Phase: Phase -1</text>
+
+  <rect class="gov" x="24" y="110" width="205" height="650" rx="12"/>
+  <text x="126" y="150" text-anchor="middle" class="amber" style="font:700 19px Arial">GOVERNANCE &amp;</text><text x="126" y="174" text-anchor="middle" class="amber" style="font:700 19px Arial">SOURCE OF TRUTH</text>
+  <g class="small"><rect class="gov" x="42" y="205" width="168" height="72" rx="8"/><text x="126" y="234" text-anchor="middle">GitHub =</text><text x="126" y="256" text-anchor="middle">Authoritative Source</text><rect class="gov" x="42" y="296" width="168" height="72" rx="8"/><text x="126" y="325" text-anchor="middle">GitBook =</text><text x="126" y="347" text-anchor="middle">Publishing Layer</text><rect class="gov" x="42" y="387" width="168" height="55" rx="8"/><text x="126" y="421" text-anchor="middle">Documentation First</text><rect class="gov" x="42" y="461" width="168" height="55" rx="8"/><text x="126" y="495" text-anchor="middle">ADRs</text><rect class="gov" x="42" y="535" width="168" height="76" rx="8"/><text x="126" y="565" text-anchor="middle">Anti-Drift</text><text x="126" y="588" text-anchor="middle">AI Rules</text></g>
+
+  <rect class="panel" x="270" y="108" width="1010" height="72" rx="12"/><text x="300" y="150" class="cyan">Operators</text><rect class="box" x="555" y="122" width="420" height="44" rx="8"/><text x="760" y="151" text-anchor="middle" class="label" style="font-size:20px">User / Operator   •   Voice   •   Text</text>
+  <path class="line" d="M760 180 V202"/>
+
+  <rect class="panel" x="270" y="196" width="1010" height="125" rx="12"/><text x="300" y="246" class="cyan">Interaction Layer</text>
+  <rect class="box" x="480" y="210" width="335" height="90" rx="8"/><text x="647" y="241" text-anchor="middle" class="label">Mission Control</text><text x="510" y="266" class="mini">Dashboard • Visual Workflows • Timeline</text><text x="510" y="286" class="mini">Signals • Approvals</text>
+  <rect class="box" x="890" y="210" width="310" height="90" rx="8"/><text x="1045" y="241" text-anchor="middle" class="label">ORACLE Assistant</text><text x="917" y="266" class="mini">Voice + Text • Plans • Explains</text><text x="917" y="286" class="mini">Approves • Verifies</text>
+  <path class="line" d="M815 255 H890"/><path class="line" d="M1000 321 V340"/><path class="line" d="M675 321 V340"/>
+
+  <rect class="core" x="270" y="338" width="1010" height="225" rx="12"/><text x="775" y="374" text-anchor="middle" class="label" style="font-size:27px">ECHELON Kernel <tspan class="cyan">(Permanent Core)</tspan></text>
+  <g>
+    <rect class="box" x="365" y="400" width="150" height="48" rx="7"/><text x="440" y="430" text-anchor="middle" class="small">Identity</text>
+    <rect class="box" x="530" y="400" width="150" height="48" rx="7"/><text x="605" y="422" text-anchor="middle" class="small">Capability</text><text x="605" y="440" text-anchor="middle" class="small">Manager</text>
+    <rect class="box" x="695" y="400" width="150" height="48" rx="7"/><text x="770" y="422" text-anchor="middle" class="small">Task</text><text x="770" y="440" text-anchor="middle" class="small">Engine</text>
+    <rect class="box" x="860" y="400" width="150" height="48" rx="7"/><text x="935" y="422" text-anchor="middle" class="small">Intelligence</text><text x="935" y="440" text-anchor="middle" class="small">Bus</text>
+    <rect class="box" x="1025" y="400" width="150" height="48" rx="7"/><text x="1100" y="422" text-anchor="middle" class="small">Context</text><text x="1100" y="440" text-anchor="middle" class="small">Engine</text>
+    <rect class="box" x="365" y="465" width="150" height="48" rx="7"/><text x="440" y="487" text-anchor="middle" class="small">Secrets</text><text x="440" y="505" text-anchor="middle" class="small">Interface</text>
+    <rect class="box" x="530" y="465" width="150" height="48" rx="7"/><text x="605" y="487" text-anchor="middle" class="small">Storage</text><text x="605" y="505" text-anchor="middle" class="small">Interface</text>
+    <rect class="box" x="695" y="465" width="150" height="48" rx="7"/><text x="770" y="487" text-anchor="middle" class="small">Audit /</text><text x="770" y="505" text-anchor="middle" class="small">Timeline</text>
+    <rect class="box" x="860" y="465" width="150" height="48" rx="7"/><text x="935" y="487" text-anchor="middle" class="small">Health / Observability</text><text x="935" y="505" text-anchor="middle" class="small">Adapter</text>
+    <rect class="box" x="1025" y="465" width="150" height="48" rx="7"/><text x="1100" y="487" text-anchor="middle" class="small">ORACLE</text><text x="1100" y="505" text-anchor="middle" class="small">Runtime</text>
+  </g>
+  <text x="775" y="545" text-anchor="middle" class="cyan" style="font:600 16px Arial">Core first • Event-driven • Human approval for critical actions</text>
+  <path class="line" d="M775 563 V590"/>
+
+  <rect class="infra" x="270" y="590" width="1010" height="80" rx="12"/><text x="292" y="622" class="cyan" style="font:700 15px Arial">Approved Infrastructure &amp; Core Services</text>
+  <g class="small"><rect class="infra" x="485" y="606" width="120" height="42" rx="7"/><text x="545" y="633" text-anchor="middle">PostgreSQL</text><rect class="infra" x="615" y="606" width="95" height="42" rx="7"/><text x="662" y="633" text-anchor="middle">Redis</text><rect class="infra" x="720" y="606" width="92" height="42" rx="7"/><text x="766" y="633" text-anchor="middle">MinIO</text><rect class="infra" x="822" y="606" width="100" height="42" rx="7"/><text x="872" y="633" text-anchor="middle">Traefik</text><rect class="infra" x="932" y="606" width="110" height="42" rx="7"/><text x="987" y="633" text-anchor="middle">Authentik</text><rect class="infra" x="1052" y="606" width="110" height="42" rx="7"/><text x="1107" y="633" text-anchor="middle">9router</text></g>
+  <path class="purpleline" d="M1162 627 H1315"/>
+
+  <rect class="future" x="1325" y="340" width="245" height="330" rx="12"/><text x="1447" y="378" text-anchor="middle" class="purple" style="font:700 22px Arial">Model &amp; AI Services</text>
+  <g class="small"><rect class="future" x="1345" y="401" width="205" height="43" rx="7"/><text x="1447" y="429" text-anchor="middle">LLM Providers</text><rect class="future" x="1345" y="458" width="205" height="43" rx="7"/><text x="1447" y="486" text-anchor="middle">Speech-to-Text</text><rect class="future" x="1345" y="515" width="205" height="43" rx="7"/><text x="1447" y="543" text-anchor="middle">Text-to-Speech</text><rect class="future" x="1345" y="572" width="205" height="43" rx="7"/><text x="1447" y="600" text-anchor="middle">Embeddings</text></g><text x="1447" y="645" text-anchor="middle" class="purple" style="font:italic 15px Arial">Unified AI Gateway</text>
+
+  <rect class="cap" x="270" y="695" width="1010" height="170" rx="12"/><text x="295" y="730" class="green" style="font:700 18px Arial">Replaceable Capabilities</text>
+  <g class="small"><rect class="cap" x="455" y="711" width="120" height="46" rx="7"/><text x="515" y="739" text-anchor="middle">Hermes Agent</text><rect class="cap" x="590" y="711" width="110" height="46" rx="7"/><text x="645" y="739" text-anchor="middle">LobeHub</text><rect class="cap" x="715" y="711" width="90" height="46" rx="7"/><text x="760" y="739" text-anchor="middle">n8n</text><rect class="cap" x="820" y="711" width="105" height="46" rx="7"/><text x="872" y="739" text-anchor="middle">RAGFlow</text><rect class="cap" x="940" y="711" width="105" height="46" rx="7"/><text x="992" y="739" text-anchor="middle">ToolJet</text><rect class="cap" x="1060" y="711" width="120" height="46" rx="7"/><text x="1120" y="739" text-anchor="middle">OpenHands</text></g>
+  <text x="775" y="787" text-anchor="middle" class="green" style="font:700 15px Arial">Conditional / Future Capabilities</text>
+  <g class="mini"><rect class="future" x="525" y="802" width="150" height="38" rx="7"/><text x="600" y="826" text-anchor="middle">Screen Intelligence</text><rect class="future" x="700" y="802" width="150" height="38" rx="7"/><text x="775" y="826" text-anchor="middle">Browser Specialist</text><rect class="future" x="875" y="802" width="130" height="38" rx="7"/><text x="940" y="826" text-anchor="middle">API Laboratory</text></g>
+  <path class="line" d="M845 670 V695"/><path class="purpleline" d="M1325 620 C1280 620 1270 720 1185 720"/>
+
+  <rect class="panel" x="24" y="890" width="1545" height="82" rx="12"/><text x="48" y="940" class="cyan" style="font:700 20px Arial">PHASE ROADMAP</text>
+  <g class="mini"><text x="235" y="925" text-anchor="middle">Phase -1</text><text x="235" y="945" text-anchor="middle">Constitution &amp; Controls</text><text x="455" y="925" text-anchor="middle">Phase 0</text><text x="455" y="945" text-anchor="middle">Kernel Foundation</text><text x="660" y="925" text-anchor="middle">Phase 1</text><text x="660" y="945" text-anchor="middle">Controlled AI Execution</text><text x="895" y="925" text-anchor="middle">Phase 2</text><text x="895" y="945" text-anchor="middle">Intelligence Layer</text><text x="1100" y="925" text-anchor="middle">Phase 3</text><text x="1100" y="945" text-anchor="middle">Builder Capabilities</text><text x="1305" y="925" text-anchor="middle">Phase 4</text><text x="1305" y="945" text-anchor="middle">Foundry &amp; Workspaces</text><text x="1480" y="925" text-anchor="middle">Phase 5</text><text x="1480" y="945" text-anchor="middle">Mobile / Edge</text></g>
+</svg>
