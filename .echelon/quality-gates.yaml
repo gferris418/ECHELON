@@ -1,0 +1,51 @@
+quality_gate_schema_version: 1
+common_requirements:
+  - architecture_reference
+  - acceptance_criteria
+  - security_impact
+  - rollback_plan
+  - documentation_update
+  - verification_evidence
+
+phase_minus_1:
+  required:
+    - branch_protection_verified
+    - github_security_settings_verified
+    - capability_registry_complete
+    - adrs_complete_for_accepted_decisions
+    - documentation_integrity_workflow_passing
+
+phase_0:
+  required:
+    - lint_and_format_checks
+    - unit_tests_for_kernel_services
+    - api_contract_tests
+    - database_migration_test
+    - compose_config_validation
+    - health_check_test
+    - container_non_root_verification
+    - no_secret_in_build_context_verification
+
+phase_1:
+  required:
+    - identity_authorization_tests
+    - secret_reference_tests
+    - approval_boundary_tests
+    - gateway_error_and_budget_tests
+    - agent_adapter_isolation_test
+
+phase_2:
+  required:
+    - provenance_and_citation_tests
+    - workspace_isolation_tests
+    - retention_and_deletion_tests
+    - consent_tests_for_voice_or_screen_context
+    - load_test_for_context_and_event_paths
+
+phase_3_to_5:
+  required:
+    - capability_contract_tests
+    - sandbox_escape_review
+    - backup_and_restore_test
+    - update_and_rollback_test
+    - observability_and_alert_test

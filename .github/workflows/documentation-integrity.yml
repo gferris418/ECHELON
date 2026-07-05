@@ -39,7 +39,11 @@ jobs:
             docs/github-repository-settings-checklist.md
             docs/mac-development-and-container-policy.md
             docs/container-runtime-hardening.md
+            docs/data-governance-and-memory-boundaries.md
+            docs/local-capacity-and-performance-budget.md
+            docs/research/hermes-mission-control-reference-assessment.md
             docs/audits/2026-07-06-repository-governance-container-audit.md
+            docs/audits/2026-07-06-principal-architecture-audit.md
             docs/releases/v0.1.md
             docs/releases/v0.2.md
             docs/releases/v0.3.md
@@ -50,6 +54,7 @@ jobs:
             .echelon/platform.yaml
             .echelon/phases.yaml
             .echelon/capabilities.yaml
+            .echelon/quality-gates.yaml
             .echelon/ai-rules.yaml
             .echelon/local-development.yaml
             .echelon/module-installation-record.template.yaml
@@ -57,16 +62,19 @@ jobs:
           for required_file in "${required_files[@]}"; do
             test -f "$required_file"
           done
-      - name: Verify baseline and local-runtime policy
+      - name: Verify baseline, capability registry, and runtime policy
         run: |
           set -euo pipefail
           grep -q 'v0.3' README.md
           grep -q 'GitHub is authoritative' README.md
-          grep -q 'one_capability_one_best_tool' .echelon/capabilities.yaml
+          grep -q 'registry_schema_version: 1' .echelon/capabilities.yaml
+          grep -q 'candidate_is_not_authorized_for_installation: true' .echelon/capabilities.yaml
+          grep -q 'quality_gate_schema_version: 1' .echelon/quality-gates.yaml
           grep -q 'host_root: /Users/babuislam/Developer/ECHELON' .echelon/local-development.yaml
           grep -q 'container_runtime: OrbStack Docker' .echelon/local-development.yaml
           grep -q 'privileged_containers: prohibited' .echelon/local-development.yaml
           grep -q 'module-installation-record.template.yaml' .echelon/local-development.yaml
+          grep -q 'data_governance:' .echelon/platform.yaml
       - name: Verify workflow actions are immutable SHA pinned
         run: |
           set -euo pipefail

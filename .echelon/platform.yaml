@@ -18,6 +18,11 @@ local_development_policy:
   installation_record: .echelon/module-installation-record.template.yaml
   mac_policy: docs/mac-development-and-container-policy.md
   runtime_hardening: docs/container-runtime-hardening.md
+quality_and_data_controls:
+  quality_gates: .echelon/quality-gates.yaml
+  data_governance: docs/data-governance-and-memory-boundaries.md
+  local_capacity_budget: docs/local-capacity-and-performance-budget.md
+  hermes_reference_assessment: docs/research/hermes-mission-control-reference-assessment.md
 core_services:
   - identity
   - capability-manager
