@@ -1,5 +1,9 @@
 # ECHELON Documentation Index
 
+## Architecture
+
+- [Editable architecture diagram — baseline v0.3](assets/echelon-architecture-v0.3.svg)
+
 ## Release snapshots
 
 | Release | Scope | Status |
