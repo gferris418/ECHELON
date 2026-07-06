@@ -6,5 +6,16 @@
   "engines": {
     "node": ">=22.14.0",
     "pnpm": ">=10.12.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "dev": "pnpm -r --parallel --if-present dev",
+    "format": "prettier --check .",
+    "lint": "eslint .",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "test:e2e": "playwright test",
+    "contracts:validate": "node scripts/validate-contracts.mjs",
+    "policy:test": "pnpm --filter @echelon/policy test"
   }
 }
