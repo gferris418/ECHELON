@@ -22,12 +22,12 @@ The current system is not yet an application. Its central risk is documentation-
 
 ### Findings
 
-| ID | Severity | Finding | Impact | Remediation |
-|---|---|---|---|---|
-| ARC-01 | High | No executable kernel contracts, API schemas, event schema, or data model exist. | The intended modular architecture cannot yet prevent tight coupling or incompatible adapters. | Phase 0 must define versioned API and event contracts before services are built. |
-| ARC-02 | High | The machine-readable capability registry was incomplete relative to the tool catalogue. | Agents and contributors could adopt a tool not represented in source-of-truth policy. | Normalize registry by role, phase, status, and source; require adoption records. |
-| ARC-03 | Medium | An OrbStack policy existed while the catalogue still listed Colima. | Conflicting local-runtime guidance increases setup drift. | Make OrbStack Docker the selected local baseline and document fallbacks as exceptions only. |
-| ARC-04 | Medium | Individual ADR records remain a pending task. | High-impact design decisions can be re-litigated or silently changed. | Complete individual ADRs before Phase 0. |
+| ID     | Severity | Finding                                                                                 | Impact                                                                                        | Remediation                                                                                 |
+| ------ | -------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| ARC-01 | High     | No executable kernel contracts, API schemas, event schema, or data model exist.         | The intended modular architecture cannot yet prevent tight coupling or incompatible adapters. | Phase 0 must define versioned API and event contracts before services are built.            |
+| ARC-02 | High     | The machine-readable capability registry was incomplete relative to the tool catalogue. | Agents and contributors could adopt a tool not represented in source-of-truth policy.         | Normalize registry by role, phase, status, and source; require adoption records.            |
+| ARC-03 | Medium   | An OrbStack policy existed while the catalogue still listed Colima.                     | Conflicting local-runtime guidance increases setup drift.                                     | Make OrbStack Docker the selected local baseline and document fallbacks as exceptions only. |
+| ARC-04 | Medium   | Individual ADR records remain a pending task.                                           | High-impact design decisions can be re-litigated or silently changed.                         | Complete individual ADRs before Phase 0.                                                    |
 
 ## 2. Security and vulnerabilities
 
@@ -37,12 +37,12 @@ No application source was available to inspect for SQL injection, command inject
 
 ### Findings
 
-| ID | Severity | Finding | Impact | Remediation |
-|---|---|---|---|---|
-| SEC-01 | Critical | Repository-file controls cannot prove that GitHub secret scanning, push protection, private vulnerability reporting, or branch protection are enabled. | A secret or unsafe workflow may still be pushed or merged. | Complete the GitHub settings checklist and attach evidence to Phase -1 issues. |
-| SEC-02 | High | No deployed runtime exists; therefore identity, authorization, secret references, rate limits, and approval enforcement are untested. | Security policy may not survive implementation. | Gate Phase 1 behind authorization, secret-reference, and approval-boundary tests. |
-| SEC-03 | High | Commercial Hermes/Agent OS references promote broad tool access, shared memory, chat coordination, and continuous local capture concepts. | Those patterns can bypass workspace isolation and increase privacy risk. | Treat them as UX references only; enforce the data-governance boundary policy. |
-| SEC-04 | Medium | `.gitignore` and `.dockerignore` reduce accidental exposure but do not detect committed secrets or historical leaks. | Sensitive data can still enter Git history. | Enable GitHub secret scanning/push protection; add an approved secret scanner when a pinned-action review is complete. |
+| ID     | Severity | Finding                                                                                                                                                | Impact                                                                   | Remediation                                                                                                            |
+| ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| SEC-01 | Critical | Repository-file controls cannot prove that GitHub secret scanning, push protection, private vulnerability reporting, or branch protection are enabled. | A secret or unsafe workflow may still be pushed or merged.               | Complete the GitHub settings checklist and attach evidence to Phase -1 issues.                                         |
+| SEC-02 | High     | No deployed runtime exists; therefore identity, authorization, secret references, rate limits, and approval enforcement are untested.                  | Security policy may not survive implementation.                          | Gate Phase 1 behind authorization, secret-reference, and approval-boundary tests.                                      |
+| SEC-03 | High     | Commercial Hermes/Agent OS references promote broad tool access, shared memory, chat coordination, and continuous local capture concepts.              | Those patterns can bypass workspace isolation and increase privacy risk. | Treat them as UX references only; enforce the data-governance boundary policy.                                         |
+| SEC-04 | Medium   | `.gitignore` and `.dockerignore` reduce accidental exposure but do not detect committed secrets or historical leaks.                                   | Sensitive data can still enter Git history.                              | Enable GitHub secret scanning/push protection; add an approved secret scanner when a pinned-action review is complete. |
 
 ## 3. Performance and operability
 
@@ -52,20 +52,20 @@ No runtime, database queries, loops, memory profiles, container images, or API p
 
 ### Anticipated architecture risks
 
-| ID | Severity | Finding | Impact | Remediation |
-|---|---|---|---|---|
-| PERF-01 | High | The M1 MacBook Air has 16 GB RAM, while the future stack includes data stores, gateway, observability, RAG, browser, and agent capabilities. | Running all profiles simultaneously will cause memory pressure and poor developer experience. | Use Compose profiles, service limits, and a local capacity budget; move full-stack tests to Linux staging. |
-| PERF-02 | High | Context, agent events, logs, and RAG data can grow without bounds. | Latency, storage cost, noisy retrieval, and degraded agent quality. | Require retention, size, time, token, and provenance bounds before Phase 2. |
-| PERF-03 | Medium | Observability stack and heavy candidates may be treated as default local services. | Resource competition masks real performance behavior. | Run observability and one heavyweight candidate at a time locally. |
+| ID      | Severity | Finding                                                                                                                                      | Impact                                                                                        | Remediation                                                                                                |
+| ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| PERF-01 | High     | The M1 MacBook Air has 16 GB RAM, while the future stack includes data stores, gateway, observability, RAG, browser, and agent capabilities. | Running all profiles simultaneously will cause memory pressure and poor developer experience. | Use Compose profiles, service limits, and a local capacity budget; move full-stack tests to Linux staging. |
+| PERF-02 | High     | Context, agent events, logs, and RAG data can grow without bounds.                                                                           | Latency, storage cost, noisy retrieval, and degraded agent quality.                           | Require retention, size, time, token, and provenance bounds before Phase 2.                                |
+| PERF-03 | Medium   | Observability stack and heavy candidates may be treated as default local services.                                                           | Resource competition masks real performance behavior.                                         | Run observability and one heavyweight candidate at a time locally.                                         |
 
 ## 4. Code quality and technical debt
 
-| ID | Severity | Finding | Impact | Remediation |
-|---|---|---|---|---|
-| QLT-01 | High | No implementation test harness or quality gate exists yet. | Phase 0 could accumulate untested architecture immediately. | Add phase-specific unit, contract, migration, Compose, health, authorization, provenance, and restore-test gates. |
-| QLT-02 | Medium | Documentation is strong but distributed across releases, policies, registers, and templates. | Contributors can miss a mandatory document. | Link policies from machine-readable platform context and CI; maintain a compact governance index. |
-| QLT-03 | Medium | Capability source references sometimes remain "repository to be confirmed." | An unverified upstream can be accidentally trusted. | Keep status as candidate/research and require source revision before installation. |
-| QLT-04 | Low | Current repository is documentation-heavy and has no code duplication or complexity that can be measured. | No present code debt; future debt risk remains. | Enforce formatting, linting, unit tests, contract tests, and code review before adding implementation. |
+| ID     | Severity | Finding                                                                                                   | Impact                                                      | Remediation                                                                                                       |
+| ------ | -------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| QLT-01 | High     | No implementation test harness or quality gate exists yet.                                                | Phase 0 could accumulate untested architecture immediately. | Add phase-specific unit, contract, migration, Compose, health, authorization, provenance, and restore-test gates. |
+| QLT-02 | Medium   | Documentation is strong but distributed across releases, policies, registers, and templates.              | Contributors can miss a mandatory document.                 | Link policies from machine-readable platform context and CI; maintain a compact governance index.                 |
+| QLT-03 | Medium   | Capability source references sometimes remain "repository to be confirmed."                               | An unverified upstream can be accidentally trusted.         | Keep status as candidate/research and require source revision before installation.                                |
+| QLT-04 | Low      | Current repository is documentation-heavy and has no code duplication or complexity that can be measured. | No present code debt; future debt risk remains.             | Enforce formatting, linting, unit tests, contract tests, and code review before adding implementation.            |
 
 ## 5. External Hermes reference assessment
 

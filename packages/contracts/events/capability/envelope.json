@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CapabilityEventEnvelope",
+  "description": "Common envelope for all durable capability lifecycle events",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "spec_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "type": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "workspace_id": { "type": "string", "format": "uuid" },
+    "source": { "type": "string" },
+    "classification": {
+      "type": "string",
+      "enum": ["public", "internal", "confidential", "restricted"]
+    },
+    "correlation_id": { "type": "string", "format": "uuid" },
+    "causation_id": { "type": "string", "format": "uuid" },
+    "payload": { "type": "object" }
+  },
+  "required": [
+    "id",
+    "spec_version",
+    "type",
+    "timestamp",
+    "workspace_id",
+    "source",
+    "classification",
+    "correlation_id",
+    "payload"
+  ]
+}

@@ -19,13 +19,26 @@
 - [Data governance and memory boundaries](data-governance-and-memory-boundaries.md)
 - [Local capacity and performance budget](local-capacity-and-performance-budget.md)
 
+## Phase 0 decision records
+
+| Document                                                                                                              | Status    |
+| --------------------------------------------------------------------------------------------------------------------- | --------- |
+| [Phase 0 execution decisions](phase-0-contract-layout-decisions.md)                                                   | Confirmed |
+| [Phase 0 monorepo initialization decisions](phase-0-monorepo-initialization-decisions.md)                             | Confirmed |
+| [Phase 0 policy layout decisions](phase-0-policy-layout-decisions.md)                                                 | Confirmed |
+| [Phase 0 quality gate decisions](phase-0-quality-gate-decisions.md)                                                   | Confirmed |
+| [Phase 0 runbook decisions](phase-0-runbook-decisions.md)                                                             | Confirmed |
+| [Phase 0 remaining architecture and governance decisions](phase-0-remaining-architecture-and-governance-decisions.md) | Confirmed |
+| [P0.02 implementation checklist](p0-02-implementation-checklist.md)                                                   | Confirmed |
+| [P0.02 followup](p0-02-followup.md)                                                                                   | Confirmed |
+
 ## Release snapshots
 
-| Release | Scope | Status |
-|---|---|---|
-| [v0.1](releases/v0.1.md) | Foundational Bible, kernel, ORACLE, capability standard, initial phases | Historical snapshot |
-| [v0.2](releases/v0.2.md) | Voice/text operator model, GitHub-first governance, capability policy, research candidates | Historical snapshot |
-| [v0.3](releases/v0.3.md) | Intelligence Bus, Context Engine, screen/browser intelligence, repository evaluation policy | Current baseline |
+| Release                  | Scope                                                                                       | Status              |
+| ------------------------ | ------------------------------------------------------------------------------------------- | ------------------- |
+| [v0.1](releases/v0.1.md) | Foundational Bible, kernel, ORACLE, capability standard, initial phases                     | Historical snapshot |
+| [v0.2](releases/v0.2.md) | Voice/text operator model, GitHub-first governance, capability policy, research candidates  | Historical snapshot |
+| [v0.3](releases/v0.3.md) | Intelligence Bus, Context Engine, screen/browser intelligence, repository evaluation policy | Current baseline    |
 
 ## Rules for humans and AI contributors
 

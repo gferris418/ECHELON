@@ -1,7 +1,7 @@
 ---
 name: Capability evaluation
 about: Evaluate an external tool or repository before ECHELON adoption
-title: "[EVALUATE][CAPABILITY] "
+title: '[EVALUATE][CAPABILITY] '
 labels: pending
 ---
 

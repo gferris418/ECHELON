@@ -39,22 +39,22 @@ Phase 0 does not implement full RAG/embeddings/OCR, broad AI agent execution, au
 
 ## 5. Technology baseline
 
-| Area | Decision |
-|---|---|
-| Repository | One modular monorepo |
-| Kernel API | TypeScript + NestJS modular monolith |
-| Mission Control | Next.js + TypeScript |
-| Specialist workloads | Isolated Python workers only when justified |
-| Canonical state | PostgreSQL, schema ownership per Kernel module |
-| Queue/transient coordination | Redis; PostgreSQL remains authoritative |
-| Events | In-process domain events + PostgreSQL transactional outbox |
-| Objects | MinIO now; cloud S3-compatible storage later |
-| Identity | Authentik |
-| Secrets | OpenBao operationally; macOS Keychain/ignored local env only for developer bootstrap |
-| Contracts | OpenAPI 3.1 for HTTP; JSON Schema for durable events |
-| Realtime | Authenticated, workspace-filtered SSE |
-| Reverse proxy | Traefik |
-| Local runtime | OrbStack/Docker Compose, `linux/arm64` |
+| Area                         | Decision                                                                             |
+| ---------------------------- | ------------------------------------------------------------------------------------ |
+| Repository                   | One modular monorepo                                                                 |
+| Kernel API                   | TypeScript + NestJS modular monolith                                                 |
+| Mission Control              | Next.js + TypeScript                                                                 |
+| Specialist workloads         | Isolated Python workers only when justified                                          |
+| Canonical state              | PostgreSQL, schema ownership per Kernel module                                       |
+| Queue/transient coordination | Redis; PostgreSQL remains authoritative                                              |
+| Events                       | In-process domain events + PostgreSQL transactional outbox                           |
+| Objects                      | MinIO now; cloud S3-compatible storage later                                         |
+| Identity                     | Authentik                                                                            |
+| Secrets                      | OpenBao operationally; macOS Keychain/ignored local env only for developer bootstrap |
+| Contracts                    | OpenAPI 3.1 for HTTP; JSON Schema for durable events                                 |
+| Realtime                     | Authenticated, workspace-filtered SSE                                                |
+| Reverse proxy                | Traefik                                                                              |
+| Local runtime                | OrbStack/Docker Compose, `linux/arm64`                                               |
 
 ## 6. Kernel boundaries
 

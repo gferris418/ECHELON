@@ -1,3 +1,3 @@
 # Table of contents
 
-* [ECHELON](README.md)
+- [ECHELON](README.md)

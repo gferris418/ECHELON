@@ -15,12 +15,12 @@ ECHELON may use memory, documents, voice input, and optional screen context, but
 
 ## Classification
 
-| Class | Examples | Default handling |
-|---|---|---|
-| Public | public documentation, published URLs | may be indexed with source provenance |
-| Internal | project plans, non-sensitive operations | workspace-scoped; retention set by workspace |
-| Confidential | customer, financial, supplier, security design data | explicit access grant; encrypted at rest; limited retention |
-| Restricted | credentials, identity documents, raw screen/audio captures | do not place in general knowledge stores; separate vault/reference-only access |
+| Class        | Examples                                                   | Default handling                                                               |
+| ------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Public       | public documentation, published URLs                       | may be indexed with source provenance                                          |
+| Internal     | project plans, non-sensitive operations                    | workspace-scoped; retention set by workspace                                   |
+| Confidential | customer, financial, supplier, security design data        | explicit access grant; encrypted at rest; limited retention                    |
+| Restricted   | credentials, identity documents, raw screen/audio captures | do not place in general knowledge stores; separate vault/reference-only access |
 
 ## Retention and deletion
 

@@ -1,3 +1,9 @@
 {
-  "private": true
+  "name": "@echelon/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate-contracts.mjs",
+    "typecheck": "tsc --noEmit"
+  }
 }

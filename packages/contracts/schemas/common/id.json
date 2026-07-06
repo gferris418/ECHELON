@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UUID",
+  "description": "A UUID-formatted identifier",
+  "type": "string",
+  "format": "uuid"
+}

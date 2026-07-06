@@ -1,0 +1,85 @@
+openapi: 3.1.0
+info:
+  title: ECHELON Kernel API
+  version: 0.0.0
+  description: ECHELON Kernel HTTP API contract baseline.
+    No endpoints are implemented. This document defines the contract shape
+    for Phase 0 before any runtime code is written.
+servers:
+  - url: http://127.0.0.1:3000
+    description: Local development
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  headers:
+    X-Workspace-Id:
+      schema:
+        type: string
+        format: uuid
+      description: Workspace-scoped request context
+    X-Correlation-Id:
+      schema:
+        type: string
+        format: uuid
+      description: Request tracing identifier
+    Idempotency-Key:
+      schema:
+        type: string
+        format: uuid
+      description: Idempotency key for state-changing requests
+
+  schemas:
+    ErrorEnvelope:
+      type: object
+      properties:
+        data:
+          type: 'null'
+        meta:
+          $ref: '#/components/schemas/Meta'
+        error:
+          $ref: '#/components/schemas/ErrorDetail'
+      required:
+        - meta
+        - error
+    Meta:
+      type: object
+      properties:
+        correlation_id:
+          type: string
+          format: uuid
+        workspace_id:
+          type: string
+          format: uuid
+      required:
+        - correlation_id
+    ErrorDetail:
+      type: object
+      properties:
+        code:
+          type: string
+          enum:
+            - validation_error
+            - authentication_required
+            - authorization_denied
+            - not_found
+            - conflict
+            - approval_required
+            - rate_limited
+            - dependency_unavailable
+            - internal_error
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+      required:
+        - code
+        - message
+
+paths: {}

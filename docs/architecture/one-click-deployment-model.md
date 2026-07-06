@@ -63,11 +63,11 @@ The Bootstrapper hides container, database, and service configuration from ordin
 
 Profiles provide a minimal, appropriate starting point rather than installing every capability.
 
-| Profile | Initial scope |
-|---|---|
-| Personal Starter | private workspace, tasks, storage, audit, assistant-ready policy baseline |
-| Team Starter | shared workspace, roles, tasks, approvals, shared documents, signals |
-| Organization Starter | multiple workspaces, organization policy, MFA/identity baseline, audit and backup baseline |
+| Profile              | Initial scope                                                                                             |
+| -------------------- | --------------------------------------------------------------------------------------------------------- |
+| Personal Starter     | private workspace, tasks, storage, audit, assistant-ready policy baseline                                 |
+| Team Starter         | shared workspace, roles, tasks, approvals, shared documents, signals                                      |
+| Organization Starter | multiple workspaces, organization policy, MFA/identity baseline, audit and backup baseline                |
 | Developer / Research | isolated research workspace, controlled capability testing, no production secrets or shared business data |
 
 ### 3.3 Hardware and environment resolver
@@ -153,13 +153,13 @@ Module selection must use understandable outcomes rather than repository names o
 
 Examples:
 
-| User outcome | Potential governed capability set |
-|---|---|
-| Manage projects | tasks, approvals, timeline, notifications |
-| Organize documents | object storage, metadata, Knowledge Core, search, retention controls |
-| Use AI assistants | 9router connection, provider policy, ORACLE, approved AI workspace |
-| Automate routine work | approved automation capability, task integration, approval controls |
-| Build internal tools | API Laboratory and approved internal-operations capability |
+| User outcome          | Potential governed capability set                                    |
+| --------------------- | -------------------------------------------------------------------- |
+| Manage projects       | tasks, approvals, timeline, notifications                            |
+| Organize documents    | object storage, metadata, Knowledge Core, search, retention controls |
+| Use AI assistants     | 9router connection, provider policy, ORACLE, approved AI workspace   |
+| Automate routine work | approved automation capability, task integration, approval controls  |
+| Build internal tools  | API Laboratory and approved internal-operations capability           |
 
 Advanced users may inspect technical details, but the default user journey remains outcome-led.
 
@@ -215,12 +215,12 @@ Select approved backup
 
 The experience is phased rather than all delivered at once.
 
-| Stage | Delivery |
-|---|---|
-| Phase 0 | Core services, workspace/policy/audit/capability foundations, Mission Control shell |
-| Phase 1–3 | governed AI, Context Engine, automation, specialist capabilities, operational tooling |
-| Phase 4 | capability lifecycle, Foundry controls, workspace lifecycle, installation orchestration foundations |
-| Phase 5+ | native Bootstrapper maturity, richer Genesis setup, deployment profiles, guided upgrades/recovery, mobile onboarding |
+| Stage     | Delivery                                                                                                             |
+| --------- | -------------------------------------------------------------------------------------------------------------------- |
+| Phase 0   | Core services, workspace/policy/audit/capability foundations, Mission Control shell                                  |
+| Phase 1–3 | governed AI, Context Engine, automation, specialist capabilities, operational tooling                                |
+| Phase 4   | capability lifecycle, Foundry controls, workspace lifecycle, installation orchestration foundations                  |
+| Phase 5+  | native Bootstrapper maturity, richer Genesis setup, deployment profiles, guided upgrades/recovery, mobile onboarding |
 
 The permanent invariant remains:
 

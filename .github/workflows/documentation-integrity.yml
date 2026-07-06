@@ -34,6 +34,7 @@ jobs:
             .gitignore
             .dockerignore
             .github/dependabot.yml
+            eslint.config.mjs
             docs/README.md
             docs/api-reference.md
             docs/architecture-overview.md
@@ -52,6 +53,14 @@ jobs:
             docs/releases/v0.2.md
             docs/releases/v0.3.md
             docs/adr/README.md
+            docs/adr/0001-modular-monolith-and-hybrid-language-model.md
+            docs/adr/0002-canonical-state-tasks-and-event-delivery.md
+            docs/adr/0003-identity-authorization-and-service-tokens.md
+            docs/adr/0004-kernel-native-policy-module.md
+            docs/adr/0005-append-only-audit-and-classifications.md
+            docs/adr/0006-minio-and-openbao.md
+            docs/adr/0007-contract-first-apis-and-sse.md
+            docs/adr/0008-capability-trust-and-policy-based-authority.md
             docs/phase-execution-register-v0.3.md
             docs/pending-tasks.md
             docs/phase-tools-catalog-v0.3.md
@@ -62,6 +71,15 @@ jobs:
             .echelon/ai-rules.yaml
             .echelon/local-development.yaml
             .echelon/module-installation-record.template.yaml
+            .env.example
+            infrastructure/compose/local.yml
+            packages/contracts/openapi/kernel.yaml
+            packages/contracts/events/task/envelope.json
+            packages/contracts/events/approval/envelope.json
+            packages/contracts/events/audit/envelope.json
+            packages/contracts/events/capability/envelope.json
+            packages/contracts/schemas/common/id.json
+            packages/contracts/schemas/errors/error-envelope.json
           )
           for required_file in "${required_files[@]}"; do
             test -f "$required_file"
@@ -81,6 +99,9 @@ jobs:
           grep -q 'privileged_containers: prohibited' .echelon/local-development.yaml
           grep -q 'module-installation-record.template.yaml' .echelon/local-development.yaml
           grep -q 'data_governance:' .echelon/platform.yaml
+          grep -q 'openapi: 3.1.0' packages/contracts/openapi/kernel.yaml
+          grep -q 'ECHELON Kernel API' packages/contracts/openapi/kernel.yaml
+          grep -q 'TaskEventEnvelope' packages/contracts/events/task/envelope.json
       - name: Verify workflow actions are immutable SHA pinned
         run: |
           set -euo pipefail

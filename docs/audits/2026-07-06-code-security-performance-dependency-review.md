@@ -14,15 +14,15 @@ The material risk is pre-implementation drift: policies can be bypassed if Phase
 
 ### Verified state
 
-| Area | Result |
-|---|---|
-| Application source directories | Not present |
-| API routes/endpoints | Not present |
-| Package manifests | Not present |
-| Dockerfiles / Compose manifests | Not present |
-| Database schema / migrations | Not present |
-| Test suites | Not present |
-| TODO/FIXME/HACK markers | Not found in searchable repository content |
+| Area                            | Result                                     |
+| ------------------------------- | ------------------------------------------ |
+| Application source directories  | Not present                                |
+| API routes/endpoints            | Not present                                |
+| Package manifests               | Not present                                |
+| Dockerfiles / Compose manifests | Not present                                |
+| Database schema / migrations    | Not present                                |
+| Test suites                     | Not present                                |
+| TODO/FIXME/HACK markers         | Not found in searchable repository content |
 
 ### Code quality conclusion
 
@@ -53,13 +53,13 @@ Repository files cannot prove that GitHub branch protection, private vulnerabili
 
 ### Findings and remediation
 
-| Priority | Finding | Risk | Remediation |
-|---|---|---|---|
-| High | No identity, authorization, input validation, or error-handling implementation exists. | Security requirements may be omitted when code starts. | Define API boundary validation, authorization middleware, error contract, and approval-policy tests before first endpoint. |
-| High | No secret scanner is currently enforced in CI. | Secrets may enter history despite ignore rules. | Enable GitHub secret scanning and push protection; add a reviewed/pinned scanner after Phase -1 settings are complete. |
-| High | Future agent and browser capabilities can create broad execution authority. | Prompt injection, unsafe tool use, data exfiltration, and unauthorized external effects. | Use capability allowlists, per-workspace credentials, explicit approval boundaries, network egress controls, and isolated workers. |
-| Medium | Candidate repositories have not all been evaluated with immutable revisions and licenses. | Supply-chain ambiguity. | Require capability evaluation and module installation record before adoption. |
-| Medium | No content-security, request-size, rate-limit, or upload policy exists because no API/UI exists. | Future API/UI abuse and availability risk. | Add these rules to the API contract before implementation. |
+| Priority | Finding                                                                                          | Risk                                                                                     | Remediation                                                                                                                        |
+| -------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| High     | No identity, authorization, input validation, or error-handling implementation exists.           | Security requirements may be omitted when code starts.                                   | Define API boundary validation, authorization middleware, error contract, and approval-policy tests before first endpoint.         |
+| High     | No secret scanner is currently enforced in CI.                                                   | Secrets may enter history despite ignore rules.                                          | Enable GitHub secret scanning and push protection; add a reviewed/pinned scanner after Phase -1 settings are complete.             |
+| High     | Future agent and browser capabilities can create broad execution authority.                      | Prompt injection, unsafe tool use, data exfiltration, and unauthorized external effects. | Use capability allowlists, per-workspace credentials, explicit approval boundaries, network egress controls, and isolated workers. |
+| Medium   | Candidate repositories have not all been evaluated with immutable revisions and licenses.        | Supply-chain ambiguity.                                                                  | Require capability evaluation and module installation record before adoption.                                                      |
+| Medium   | No content-security, request-size, rate-limit, or upload policy exists because no API/UI exists. | Future API/UI abuse and availability risk.                                               | Add these rules to the API contract before implementation.                                                                         |
 
 ## 3. Performance review
 
@@ -69,12 +69,12 @@ No algorithms, queries, caches, queues, memory profiles, benchmarks, or runtime 
 
 ### Architecture-level performance risks
 
-| Priority | Risk | Mitigation |
-|---|---|---|
-| High | Running the full target stack on the 16 GB M1 MacBook Air. | Compose profiles; service resource limits; cloud LLMs; Linux staging for heavy workloads. |
-| High | Unbounded event, log, context, embedding, and artifact growth. | Retention limits, expiry, quotas, token/record budgets, provenance, and log rotation. |
-| Medium | Synchronous agent/tool calls on request paths. | Long-running work must become tasks/events with timeouts, retry policy, dead-letter handling, and visible state. |
-| Medium | RAG, screen processing, browser automation, and observability running concurrently. | Test separately; enable one heavyweight capability locally; measure on Linux staging. |
+| Priority | Risk                                                                                | Mitigation                                                                                                       |
+| -------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| High     | Running the full target stack on the 16 GB M1 MacBook Air.                          | Compose profiles; service resource limits; cloud LLMs; Linux staging for heavy workloads.                        |
+| High     | Unbounded event, log, context, embedding, and artifact growth.                      | Retention limits, expiry, quotas, token/record budgets, provenance, and log rotation.                            |
+| Medium   | Synchronous agent/tool calls on request paths.                                      | Long-running work must become tasks/events with timeouts, retry policy, dead-letter handling, and visible state. |
+| Medium   | RAG, screen processing, browser automation, and observability running concurrently. | Test separately; enable one heavyweight capability locally; measure on Linux staging.                            |
 
 ## 4. Dependency analysis
 
@@ -84,10 +84,10 @@ No application package manifests were found, so there are no installable languag
 
 ### Dependency posture
 
-| Category | Current status | Required control |
-|---|---|---|
-| GitHub Actions | One pinned action; Dependabot workflow configured | Keep all actions pinned to immutable SHA and review update PRs. |
-| Selected infrastructure | PostgreSQL, Redis, MinIO, Traefik, Authentik, 9router, observability stack | Record versions/digests, arm64 support, maintenance, CVE review, and rollback image before deployment. |
+| Category                   | Current status                                                                                         | Required control                                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| GitHub Actions             | One pinned action; Dependabot workflow configured                                                      | Keep all actions pinned to immutable SHA and review update PRs.                                                        |
+| Selected infrastructure    | PostgreSQL, Redis, MinIO, Traefik, Authentik, 9router, observability stack                             | Record versions/digests, arm64 support, maintenance, CVE review, and rollback image before deployment.                 |
 | Candidate capability tools | LobeHub, Hermes Agent, RAGFlow, n8n, Whisper WebUI, Screenpipe, ToolJet, OpenHands, Bruno, NanoBrowser | Do not install until evaluation, license/security review, source revision, module record, and phase gate are complete. |
 
 ## 5. Test coverage review
@@ -100,12 +100,12 @@ This does not mean test quality is poor; it means coverage is not yet a meaningf
 
 ### Required test matrix
 
-| Phase | Minimum tests |
-|---|---|
-| Phase 0 | unit, API/event contract, migration, Compose validation, health check, non-root container, secret build-context checks |
-| Phase 1 | identity, authorization, secret references, approval boundary, gateway failure/budget, agent isolation |
-| Phase 2 | provenance, workspace isolation, retention/deletion, consent, context/event load tests |
-| Phase 3–5 | capability contract, sandbox escape review, backup/restore, update/rollback, observability/alert tests |
+| Phase     | Minimum tests                                                                                                          |
+| --------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Phase 0   | unit, API/event contract, migration, Compose validation, health check, non-root container, secret build-context checks |
+| Phase 1   | identity, authorization, secret references, approval boundary, gateway failure/budget, agent isolation                 |
+| Phase 2   | provenance, workspace isolation, retention/deletion, consent, context/event load tests                                 |
+| Phase 3–5 | capability contract, sandbox escape review, backup/restore, update/rollback, observability/alert tests                 |
 
 ## 6. Maintainability assessment
 

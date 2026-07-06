@@ -1,7 +1,7 @@
 ---
 name: Implementation task
 about: Start an approved ECHELON task with verification and rollback controls
-title: "[IMPLEMENT][P?-??] "
+title: '[IMPLEMENT][P?-??] '
 labels: pending
 ---
 

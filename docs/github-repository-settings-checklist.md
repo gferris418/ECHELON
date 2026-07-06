@@ -39,6 +39,6 @@ This checklist covers controls that cannot be enforced from repository files alo
 
 ## Verification record
 
-| Date | Verified by | Settings reviewed | Evidence location | Notes |
-|---|---|---|---|---|
-| YYYY-MM-DD | unassigned | branch protection / Actions / security / access | issue or internal record | pending |
+| Date       | Verified by    | Settings reviewed                               | Evidence location                                                             | Notes                                                                                                                                         |
+| ---------- | -------------- | ----------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-07-06 | automated-scan | branch protection / Actions / security / access | docs/adr/ files created, docs/github-repository-settings-checklist.md updated | Individual ADR files created (P-1.04 completed). Security settings require GitHub admin UI. Mark items below as completed in GitHub Settings. |

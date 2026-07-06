@@ -109,16 +109,16 @@ flowchart LR
 
 ## 5. Design decisions and rationale
 
-| Decision | Rationale |
-|---|---|
-| Kernel is permanent; capabilities are replaceable | Prevents third-party tool choice from becoming platform architecture. |
-| Event-driven integration | Reduces direct coupling and improves observability. |
-| Human approval for critical actions | Prevents autonomous changes to secrets, access, spending, external communication, deletion, or other high-impact work. |
-| GitHub is source of truth | Keeps architecture, code, review, and evidence in a versioned system. |
-| OrbStack Docker on Apple Silicon | Provides one documented local container runtime and arm64 target. |
-| Cloud LLMs are default | Matches the M1 16 GB resource constraint. |
-| Workspace-scoped context | Limits data leakage and unwanted cross-agent memory. |
-| Screen and voice context are optional | Requires consent, visibility, data classification, retention, and deletion controls. |
+| Decision                                          | Rationale                                                                                                              |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Kernel is permanent; capabilities are replaceable | Prevents third-party tool choice from becoming platform architecture.                                                  |
+| Event-driven integration                          | Reduces direct coupling and improves observability.                                                                    |
+| Human approval for critical actions               | Prevents autonomous changes to secrets, access, spending, external communication, deletion, or other high-impact work. |
+| GitHub is source of truth                         | Keeps architecture, code, review, and evidence in a versioned system.                                                  |
+| OrbStack Docker on Apple Silicon                  | Provides one documented local container runtime and arm64 target.                                                      |
+| Cloud LLMs are default                            | Matches the M1 16 GB resource constraint.                                                                              |
+| Workspace-scoped context                          | Limits data leakage and unwanted cross-agent memory.                                                                   |
+| Screen and voice context are optional             | Requires consent, visibility, data classification, retention, and deletion controls.                                   |
 
 ## 6. Scalability model
 

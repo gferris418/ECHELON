@@ -24,29 +24,29 @@ When Phase 0 begins, every public or capability-facing API must:
 
 The following domains are planned architecture surfaces only.
 
-| Domain | Purpose | Phase | Implementation status |
-|---|---|---:|---|
-| Identity | session, role, workspace access | 1 | Not implemented |
-| Workspaces | workspace isolation and membership | 4 | Not implemented |
-| Tasks | task creation, state, approval, execution, verification | 0 | Not implemented |
-| Approvals | high-impact action review and decision records | 1 | Not implemented |
-| Capabilities | registration, health, lifecycle, installation status | 0 / 4 | Not implemented |
-| Events | Intelligence Bus publishing and subscription contracts | 0 | Not implemented |
-| Context | bounded evidence assembly and provenance | 2 | Not implemented |
-| Audit / Timeline | immutable operational history views | 0 | Not implemented |
-| Health | service and dependency status | 0 | Not implemented |
+| Domain           | Purpose                                                 | Phase | Implementation status |
+| ---------------- | ------------------------------------------------------- | ----: | --------------------- |
+| Identity         | session, role, workspace access                         |     1 | Not implemented       |
+| Workspaces       | workspace isolation and membership                      |     4 | Not implemented       |
+| Tasks            | task creation, state, approval, execution, verification |     0 | Not implemented       |
+| Approvals        | high-impact action review and decision records          |     1 | Not implemented       |
+| Capabilities     | registration, health, lifecycle, installation status    | 0 / 4 | Not implemented       |
+| Events           | Intelligence Bus publishing and subscription contracts  |     0 | Not implemented       |
+| Context          | bounded evidence assembly and provenance                |     2 | Not implemented       |
+| Audit / Timeline | immutable operational history views                     |     0 | Not implemented       |
+| Health           | service and dependency status                           |     0 | Not implemented       |
 
 ## Required common request headers
 
 The following convention is proposed for all authenticated API requests.
 
-| Header | Requirement | Purpose |
-|---|---|---|
-| `Authorization` | Required after identity is implemented | Authenticated principal |
-| `X-Workspace-Id` | Required for workspace-scoped operations | Prevent cross-workspace ambiguity |
-| `X-Correlation-Id` | Generated if absent | Trace a request across task, event, and audit records |
-| `Idempotency-Key` | Required for selected create/execute operations | Prevent duplicate external effects |
-| `Content-Type` | `application/json` where JSON is used | Explicit payload handling |
+| Header             | Requirement                                     | Purpose                                               |
+| ------------------ | ----------------------------------------------- | ----------------------------------------------------- |
+| `Authorization`    | Required after identity is implemented          | Authenticated principal                               |
+| `X-Workspace-Id`   | Required for workspace-scoped operations        | Prevent cross-workspace ambiguity                     |
+| `X-Correlation-Id` | Generated if absent                             | Trace a request across task, event, and audit records |
+| `Idempotency-Key`  | Required for selected create/execute operations | Prevent duplicate external effects                    |
+| `Content-Type`     | `application/json` where JSON is used           | Explicit payload handling                             |
 
 ## Required response envelope
 
@@ -83,17 +83,17 @@ The following is a proposed response shape; it is not live.
 
 ## Required error categories
 
-| Category | Intended HTTP status | Example condition |
-|---|---:|---|
-| `validation_error` | 400 | malformed or missing input |
-| `authentication_required` | 401 | no valid identity |
-| `authorization_denied` | 403 | identity lacks workspace permission |
-| `not_found` | 404 | requested workspace/task/capability absent |
-| `conflict` | 409 | duplicate idempotency key or invalid state transition |
-| `approval_required` | 409 or 423 | high-impact action not yet approved |
-| `rate_limited` | 429 | caller exceeds documented policy |
-| `dependency_unavailable` | 503 | selected capability or dependency unhealthy |
-| `internal_error` | 500 | unexpected failure; sensitive details excluded |
+| Category                  | Intended HTTP status | Example condition                                     |
+| ------------------------- | -------------------: | ----------------------------------------------------- |
+| `validation_error`        |                  400 | malformed or missing input                            |
+| `authentication_required` |                  401 | no valid identity                                     |
+| `authorization_denied`    |                  403 | identity lacks workspace permission                   |
+| `not_found`               |                  404 | requested workspace/task/capability absent            |
+| `conflict`                |                  409 | duplicate idempotency key or invalid state transition |
+| `approval_required`       |           409 or 423 | high-impact action not yet approved                   |
+| `rate_limited`            |                  429 | caller exceeds documented policy                      |
+| `dependency_unavailable`  |                  503 | selected capability or dependency unhealthy           |
+| `internal_error`          |                  500 | unexpected failure; sensitive details excluded        |
 
 ## Documentation requirements before implementation
 

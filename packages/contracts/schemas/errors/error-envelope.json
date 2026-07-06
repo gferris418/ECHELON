@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ErrorEnvelope",
+  "description": "Standard API error response envelope",
+  "type": "object",
+  "properties": {
+    "data": { "type": "null" },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "correlation_id": { "type": "string", "format": "uuid" }
+      },
+      "required": ["correlation_id"]
+    },
+    "error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "validation_error",
+            "authentication_required",
+            "authorization_denied",
+            "not_found",
+            "conflict",
+            "approval_required",
+            "rate_limited",
+            "dependency_unavailable",
+            "internal_error"
+          ]
+        },
+        "message": { "type": "string" },
+        "details": {
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      },
+      "required": ["code", "message"]
+    }
+  },
+  "required": ["meta", "error"]
+}

@@ -10,25 +10,25 @@ The largest architecture risk is not an inefficient code loop in the current rep
 
 ## Local profile policy
 
-| Profile | Intended services | Local rule |
-|---|---|---|
-| core | PostgreSQL, Redis, MinIO, Traefik | May run together for Phase 0 validation. |
-| platform | Kernel API, Mission Control, ORACLE, task worker | May run with `core`; measure memory before adding more. |
-| ai | 9router and one light adapter | Do not run alongside heavyweight RAG, observability, or browser automation unless measured. |
-| observability | Prometheus, Grafana, Loki | Start only for diagnostic sessions or Linux staging validation. |
-| capabilities | one approved candidate proof of concept | One heavyweight capability at a time locally. |
+| Profile       | Intended services                                | Local rule                                                                                  |
+| ------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| core          | PostgreSQL, Redis, MinIO, Traefik                | May run together for Phase 0 validation.                                                    |
+| platform      | Kernel API, Mission Control, ORACLE, task worker | May run with `core`; measure memory before adding more.                                     |
+| ai            | 9router and one light adapter                    | Do not run alongside heavyweight RAG, observability, or browser automation unless measured. |
+| observability | Prometheus, Grafana, Loki                        | Start only for diagnostic sessions or Linux staging validation.                             |
+| capabilities  | one approved candidate proof of concept          | One heavyweight capability at a time locally.                                               |
 
 ## Initial local resource envelopes
 
 These are planning limits, not guaranteed performance values. Each actual Compose service must declare and validate its own limit.
 
-| Service group | Initial target limit | Operational rule |
-|---|---:|---|
-| core profile total | 4 GB memory | Keep database/object-store test fixtures small. |
-| platform profile total | 3 GB memory | Build and test only the minimum active services. |
-| ai profile total | 2 GB memory | Cloud LLM calls remain preferred; do not host large models locally. |
-| observability profile total | 2 GB memory | Enable only during diagnostics or staging verification. |
-| free headroom | at least 4 GB | Preserve for macOS, browser, IDE, and memory pressure. |
+| Service group               | Initial target limit | Operational rule                                                    |
+| --------------------------- | -------------------: | ------------------------------------------------------------------- |
+| core profile total          |          4 GB memory | Keep database/object-store test fixtures small.                     |
+| platform profile total      |          3 GB memory | Build and test only the minimum active services.                    |
+| ai profile total            |          2 GB memory | Cloud LLM calls remain preferred; do not host large models locally. |
+| observability profile total |          2 GB memory | Enable only during diagnostics or staging verification.             |
+| free headroom               |        at least 4 GB | Preserve for macOS, browser, IDE, and memory pressure.              |
 
 ## Required measurements before Phase 0 exit
 
