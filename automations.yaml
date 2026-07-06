@@ -1,0 +1,9 @@
+version: 1
+
+tasks:
+  validate-config:
+    command: node --test packages/policy/test/policy-workspace.test.mjs
+  format-check:
+    command: pnpm format
+  policy-test:
+    command: pnpm policy:test
