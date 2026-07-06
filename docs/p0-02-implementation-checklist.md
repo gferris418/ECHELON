@@ -9,16 +9,17 @@
 - [x] `packages/policy/`
 - [x] `packages/config/`
 - [x] `packages/ui/`
-- [ ] `packages/types/`
+- [x] `packages/types/`
 - [x] `capabilities/`
-- [ ] `infrastructure/compose/`
+- [x] `infrastructure/compose/`
 
 ## Tooling
 
 - [x] pnpm workspace file
 - [x] root package manifest
 - [x] strict TypeScript baseline
-- [ ] root scripts and dependency lockfile
+- [x] root command contract
+- [ ] dependency lockfile and installation evidence
 - [ ] ESLint configuration
 - [ ] Prettier configuration
 - [ ] Vitest configuration
@@ -29,7 +30,7 @@
 - [ ] Kernel API bootstrap
 - [ ] Mission Control bootstrap
 - [ ] worker bootstrap
-- [ ] Compose baseline
+- [ ] Compose service definition
 - [ ] Apple Silicon local verification
 
 ## Required evidence
