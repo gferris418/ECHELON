@@ -22,6 +22,8 @@
 - [x] Prettier configuration baseline
 - [x] Vitest workspace baseline
 - [x] Playwright configuration baseline
+- [x] application package-manifest baseline
+- [x] application TypeScript project baseline
 - [ ] dependency lockfile and installation evidence
 - [ ] ESLint configuration
 - [ ] Prettier installation and formatting evidence
