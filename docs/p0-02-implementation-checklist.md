@@ -19,9 +19,10 @@
 - [x] root package manifest
 - [x] strict TypeScript baseline
 - [x] root command contract
+- [x] Prettier configuration baseline
 - [ ] dependency lockfile and installation evidence
 - [ ] ESLint configuration
-- [ ] Prettier configuration
+- [ ] Prettier installation and formatting evidence
 - [ ] Vitest configuration
 - [ ] Playwright configuration
 
